@@ -1,3 +1,4 @@
+//Libreria recomendada por chat gpt para ficheros y numeros aleatorios
 import java.io.File
 import kotlin.random.Random
 
