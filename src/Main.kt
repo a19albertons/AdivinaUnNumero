@@ -9,19 +9,40 @@ fun jugar(){
     println(array_numero_random[0])
     println("los numero van del 1000 al 9999")
     println("Si te sale asterisco es que el numero no es coincidente")
+    println("Si repites algun numero puede dar falsos duplicados en las posiciones no coincidentes")
     println("teclea un numero de 4 cifras")
-    val numero= readln()
-    val numero_lista=numero.toList()
+    var numero= readln()
+    while (numero_random!=numero.toInt()) {
+        val numero_lista=numero.toList()
+        val numeros_no_coincidete_random= mutableListOf<Int>()
+        val numeros_no_coincidete_dado= mutableListOf<Int>()
 
-    for (i in 0 until array_numero_random.size) {
+//        Gestiona la comprobación del numero 100% coincidente
+        for (i in 0 until array_numero_random.size) {
 //        println(array_numero_random[i])
 //        println(numero_lista[i])
-        if (array_numero_random[i].toString().toInt()==numero_lista[i].toString().toInt()) {
-            print(array_numero_random[i])
+            if (array_numero_random[i].toString().toInt()==numero_lista[i].toString().toInt()) {
+                print(array_numero_random[i])
+            }
+            else {
+                print("*")
+//                Crea la lista que posteriormente serán las que comprobara si algun numero dado
+//                estan en una posición distinta
+                numeros_no_coincidete_random.add(array_numero_random[i].toString().toInt())
+                numeros_no_coincidete_dado.add(numero_lista[i].toString().toInt())
+            }
         }
-        else {
-            print("*")
+        if (numeros_no_coincidete_dado.size>0) {
+            print(" Estos son los numeros coincidentes en otra posicion1 si hay:")
+            for (i in numeros_no_coincidete_dado) {
+                if (i in numeros_no_coincidete_random) {
+                    print(" "+i)
+                }
+            }
         }
+        println()
+        numero= readln()
+
     }
 }
 fun trazas() {
