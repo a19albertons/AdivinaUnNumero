@@ -1,5 +1,8 @@
+import java.io.File
 import kotlin.random.Random
-import kotlin.system.exitProcess
+
+//Variables globales realacionadas con los logs
+val fichero="trazas.log"
 
 fun jugar(){
     //    Crear un numero aleatorio de 4 cifras según ChatGPT
@@ -10,19 +13,26 @@ fun jugar(){
     println("los numero van del 1000 al 9999")
     println("Si te sale asterisco es que el numero no es coincidente")
     println("Si repites algun numero puede dar falsos duplicados en las posiciones no coincidentes")
+    println("Solo se guardan las trazas de la ultima partida")
     println("teclea un numero de 4 cifras")
     var numero= readln()
-    while (numero_random!=numero.toInt()) {
+    val intentos=10
+    var num_intentos=0
+    while (num_intentos<intentos) {
+        num_intentos++
+        File(fichero).writeText("El numero secreto era: "+numero_random+"\n")
         val numero_lista=numero.toList()
         val numeros_no_coincidete_random= mutableListOf<Int>()
         val numeros_no_coincidete_dado= mutableListOf<Int>()
 
+        File(fichero).appendText("Intento $num_intentos: " + numero)
 //        Gestiona la comprobación del numero 100% coincidente
         for (i in 0 until array_numero_random.size) {
 //        println(array_numero_random[i])
 //        println(numero_lista[i])
             if (array_numero_random[i].toString().toInt()==numero_lista[i].toString().toInt()) {
                 print(array_numero_random[i])
+
             }
             else {
                 print("*")
@@ -45,12 +55,15 @@ fun jugar(){
 
     }
 }
-fun trazas() {
-
+fun ver_trazas() {
+//    Impresion de un fichero según chatGPT
+    val contenido=File(fichero).readText()
+    println(contenido)
 }
 
 
 fun main() {
+
     println("1. Jugar")
     println("2. Ver traza del ultimo intento")
     println("3. Salir")
@@ -58,7 +71,7 @@ fun main() {
     while (eleccion!=3) {
         when (eleccion) {
             1 -> jugar()
-            2 -> trazas()
+            2 -> ver_trazas()
             else -> println("ha introducido un numero erroneo no se hace nada")
         }
         eleccion= readln().toInt()
