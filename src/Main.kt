@@ -18,6 +18,8 @@ fun jugar(){
     var numero= readln()
     val intentos=10
     var num_intentos=0
+
+//    Reincia el fichero y añade la linea del numero secreto
     File(fichero).writeText("El numero secreto era: "+numero_random+"\n")
 
     while (num_intentos<intentos) {
@@ -26,6 +28,7 @@ fun jugar(){
         val numeros_no_coincidete_random= mutableListOf<Int>()
         val numeros_no_coincidete_dado= mutableListOf<Int>()
 
+//        Empieza concatenar la linea de intentos
         File(fichero).appendText("Intento $num_intentos: " + numero)
         var contador_acierto=0
 //        Gestiona la comprobación del numero 100% coincidente
@@ -44,6 +47,7 @@ fun jugar(){
                 numeros_no_coincidete_dado.add(numero_lista[i].toString().toInt())
             }
         }
+//        Le añade los aciertos a la linea de intentos
         File(fichero).appendText(" Aciertos: $contador_acierto,")
         var contador_coindicendia=0
         if (numeros_no_coincidete_dado.size>0) {
@@ -55,10 +59,11 @@ fun jugar(){
                 }
             }
         }
+//        Añade a la linea de intentos las coincidencias
         File(fichero).appendText(" Coincidencias: $contador_coindicendia\n")
         println()
-        println(numero)
-        println(numero_random)
+//        println(numero)
+//        println(numero_random)
         if (numero.toInt()==numero_random.toString().toInt()) {
             println("Gracias por jugar")
             break
