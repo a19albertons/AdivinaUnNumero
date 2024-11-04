@@ -48,9 +48,7 @@ fun jugar(){
 fun trazas() {
 
 }
-fun salir() {
-    exitProcess(0)
-}
+
 
 fun main() {
     println("1. Jugar")
@@ -61,7 +59,6 @@ fun main() {
         when (eleccion) {
             1 -> jugar()
             2 -> trazas()
-            3 -> salir()
             else -> println("ha introducido un numero erroneo no se hace nada")
         }
         eleccion= readln().toInt()
