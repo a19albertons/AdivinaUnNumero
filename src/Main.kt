@@ -80,14 +80,23 @@ fun ver_trazas() {
     println(contenido)
 }
 
+fun creditos() {
+    println("Adivina un numero")
+    println("Programador: A19AlbertoNS")
+    println("Diseñador: A19AlbertoNS")
+    println("Beta Tester: A19AlbertoNS")
+    println("Realizado con kotlin, java, chatGPT e Intellij")
+}
+
 
 fun main() {
 
     println("1. Jugar")
     println("2. Ver traza del ultimo intento")
-    println("3. Salir")
+    println("3. Ver creditos")
+    println("4. Salir")
     var eleccion= readln().toInt()
-    while (eleccion!=3) {
+    while (eleccion!=4) {
         when (eleccion) {
             1 -> jugar()
             2 -> ver_trazas()
@@ -97,7 +106,8 @@ fun main() {
         println()
         println("1. Jugar")
         println("2. Ver traza del ultimo intento")
-        println("3. Salir")
+        println("3. Ver creditos")
+        println("4. Salir")
         eleccion= readln().toInt()
     }
 
