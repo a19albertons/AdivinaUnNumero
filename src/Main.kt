@@ -13,7 +13,7 @@ fun jugar(){
 //    println(array_numero_random[0])
     println("los numero van del 1000 al 9999")
     println("Si te sale asterisco es que el numero no es coincidente")
-    println("Si repites algun numero puede dar falsos duplicados en las posiciones no coincidentes")
+    println("Si repites algun numero va dar falsos duplicados en las posiciones no coincidentes")
     println("Solo se guardan las trazas de la ultima partida")
     println("teclea un numero de 4 cifras")
     var numero= readln()
@@ -52,7 +52,7 @@ fun jugar(){
         File(fichero).appendText(" Aciertos: $contador_acierto,")
         var contador_coindicendia=0
         if (numeros_no_coincidete_dado.size>0) {
-            print(" Estos son los numeros coincidentes en otra posicion si hay:")
+            print(" Numeros coincidentes en otra posicion si hay:")
             for (i in numeros_no_coincidete_dado) {
                 if (i in numeros_no_coincidete_random) {
                     print(" "+i)
