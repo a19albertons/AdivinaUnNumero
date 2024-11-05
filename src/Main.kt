@@ -66,12 +66,13 @@ fun jugar(){
 //        println(numero)
 //        println(numero_random)
         if (numero.toInt()==numero_random.toString().toInt()) {
-            println("Gracias por jugar")
+
             break
         }
         numero= readln()
 
     }
+    println("Gracias por jugar")
 }
 fun ver_trazas() {
 //    Impresion de un fichero según chatGPT
