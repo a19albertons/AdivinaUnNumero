@@ -81,7 +81,7 @@ fun ver_trazas() {
         println(contenido)
     }
     else {
-        println("El fichero de log no se ha encontrado estad seguro de que ya ha jugado?")
+        println("El fichero de log no se ha encontrado está seguro de que ya ha jugado?")
     }
 }
 
