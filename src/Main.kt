@@ -76,8 +76,13 @@ fun jugar(){
 }
 fun ver_trazas() {
 //    Impresion de un fichero según chatGPT
-    val contenido=File(fichero).readText()
-    println(contenido)
+    if (File(fichero).exists()) {
+        val contenido = File(fichero).readText()
+        println(contenido)
+    }
+    else {
+        println("El fichero de log no se ha encontrado estad seguro de que ya ha jugado?")
+    }
 }
 
 fun creditos() {
