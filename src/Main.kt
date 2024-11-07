@@ -105,6 +105,7 @@ fun main() {
         when (eleccion) {
             1 -> jugar()
             2 -> ver_trazas()
+            3 -> creditos()
             else -> println("ha introducido un numero erroneo no se hace nada")
         }
 
